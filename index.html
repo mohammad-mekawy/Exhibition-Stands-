@@ -1247,7 +1247,7 @@
     <script src="js/main.js"></script>
     <script>
       $(document).ready(function () {
-        $(".btn-call-bck").click(function () {
+        $(".btn-call-bck, .btn-call-float").click(function () {
           $(".call-overlay").fadeIn();
           $(".call-back-popup").delay(500).fadeIn();
         });
@@ -1268,9 +1268,9 @@
             $(t).fadeIn(3e3);
         });
       });
-      $(".btn-call-float").on("click", function (e) {
-        $(".call-float-div").toggleClass("call-close");
-      });
+      // $(".btn-call-float").on("click", function (e) {
+      //   $(".call-float-div").toggleClass("call-close");
+      // });
     </script>
     <!-- video -->
     <script>
