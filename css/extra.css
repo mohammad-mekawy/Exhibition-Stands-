@@ -546,3 +546,12 @@ footer .col-md-7{
   padding: 115px 0 60px;
 }
 }
+.filter__item{
+    padding: 10px 15px;
+    transition: 500ms;
+    border: 2px solid transparent;
+}
+.filter__item--active,.filter__item:hover{
+    border: 2px solid #450a52;
+    border-radius: 4px;
+}
