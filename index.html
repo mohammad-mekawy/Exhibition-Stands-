@@ -590,41 +590,42 @@
                   <div class="reviews-carousel__item review-card swiper-slide">
                     <div class="review-card__image">
                       <img
-                        src="img/picture/avatar-paul.png"
-                        srcset="img/picture/avatar-paul@2x.png 2x"
+                        src="img/used/Embelem.png"
+                        srcset="img/used/Embelem.png"
                         width="112"
                         height="112"
                         alt=""
                       />
                     </div>
-                    <div class="review-card__name">Paul</div>
-                    <div class="review-card__post">
-                      Designer in <span>Paul.com</span>
-                    </div>
+                    <div class="review-card__name">Smart Homes Technology</div>
+                    <div class="review-card__post">AI Home Automation</div>
                     <div class="review-card__text">
-                      Projects for many large domestic and foreign corporations,
-                      enterprises in many elds such as nance, banking, F&B,
-                      education, communication.
+                      A very professional team with quality results. Everything
+                      was done on timely basis which shows their
+                      professionalism. Would definately recommend if you are
+                      looking out for kiosks in World Trade Center, Dubai.
                     </div>
                   </div>
                   <div class="reviews-carousel__item review-card swiper-slide">
                     <div class="review-card__image">
                       <img
-                        src="img/picture/avatar-robert.png"
-                        srcset="img/picture/avatar-robert@2x.png 2x"
+                        src="img/used/Embelem.png"
+                        srcset="img/used/Embelem.png"
                         width="112"
                         height="112"
                         alt=""
                       />
                     </div>
-                    <div class="review-card__name">Robert</div>
-                    <div class="review-card__post">
-                      Founder in <span>Apple inc.</span>
+                    <div class="review-card__name">
+                      Bombay Foodstuff Trading Co. LLC
                     </div>
+                    <div class="review-card__post">Foodstuff Trading</div>
                     <div class="review-card__text">
-                      Founded in 2007, Sparch is specializing in providing
-                      innovative services such as website design, brand identity
-                      and marketing
+                      I worked with them during Gulf Food Exhibition. I wanted
+                      my kiosk to stand out from others without having to spend
+                      a lot of money. Their designs were unique which resulted
+                      in conversions for us. I would like to thank them for
+                      their adjusting nature and out of the box design ideas
                     </div>
                   </div>
                 </div>
@@ -986,6 +987,46 @@
       </div>
       <!--.callme-later-->
     </div>
+
+    <!-- quote popup -->
+    <div class="quote-popup">
+      <span class="cls_btn">X</span>
+      <div class="info-call">
+        <div class="text-center">
+          <h3 class="call-heading">Call Us Now</h3>
+        </div>
+        <div class="text-center">
+          <span class="phone-no"
+            ><a href="tel:+971502982989">+971 50 298 2989</a></span
+          >
+        </div>
+        <span class="or-text-label text-center d-block mb-3"> OR </span>
+        <form name="quickCall" id="quickCall" action="form.php" method="post">
+          <div class="form-input-div">
+            <span class="position-relative">
+              <input
+                type="text"
+                name="quickNum"
+                id="telephone3"
+                class="form-control txt-call-phone swing flags mb-3"
+                minlength="8"
+                maxlength="16"
+                placeholder="Phone"
+                required
+              />
+              <!-- <label for="phone">Phone No.*</label> -->
+            </span>
+            <input
+              type="submit"
+              name="sendemail3"
+              class="btn-main btn-block m-t-15 quick-call-btn"
+              id="quick-call-btn"
+              value="Request a call back"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
     <span class="call-overlay"></span>
     <!-- Optional JavaScript-->
     <script src="js/jquery-3.5.1.min.js"></script>
@@ -1015,7 +1056,19 @@
     <script src="js/main.js"></script>
     <script>
       $(document).ready(function () {
-        $(".btn-call-bck, .btn-call-float").click(function () {
+        $(".btn-call-bck").click(function () {
+          $(".call-overlay").fadeIn();
+          $(".quote-popup").delay(500).fadeIn();
+        });
+        $(".cls_btn").click(function () {
+          $(".quote-popup").fadeOut();
+          $(".call-overlay").delay(500).fadeOut();
+        });
+        $(".call-overlay").click(function () {
+          $(".quote-popup").fadeOut();
+          $(".call-overlay").delay(500).fadeOut();
+        });
+        $(".btn-call-float").click(function () {
           $(".call-overlay").fadeIn();
           $(".call-back-popup").delay(500).fadeIn();
         });
