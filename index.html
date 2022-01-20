@@ -280,8 +280,8 @@
           <div class="hero__inner">
             <div class="hero__image">
               <img
-                src="img/used/bg-hero.png"
-                srcset="img/used/bg-hero.png"
+                src="img/used/bg-hero.jpg"
+                srcset="img/used/bg-hero.jpg"
                 width="1904"
                 height="1081"
                 alt=""
@@ -863,7 +863,7 @@
                 <input
                   required
                   id="user_phone"
-                  name="PhoneNum"
+                  name="phone"
                   maxlength="12"
                   type="tel"
                 />
@@ -872,7 +872,7 @@
                 <button
                   id="call_me_btn"
                   type="submit"
-                  name="sendemail2"
+                  name="sendemailCallNow"
                   class="hvr-wobble-skew"
                 >
                   Call me now
@@ -928,7 +928,7 @@
                 <input
                   required
                   id="calllater_tel"
-                  name="PhoneNum"
+                  name="phone"
                   maxlength="12"
                   type="tel"
                 />
@@ -937,7 +937,7 @@
                 <button
                   type="submit"
                   id="calllater_btn"
-                  name="sendemail3"
+                  name="sendemailCallLater"
                   class="hvr-wobble-skew"
                 >
                   Call me later
@@ -958,7 +958,7 @@
                 <textarea
                   required
                   id="msg_area"
-                  name="Message"
+                  name="message"
                   cols="20"
                   rows="10"
                 ></textarea>
@@ -966,14 +966,18 @@
               <div class="col-md-6">
                 <div class="form-group w-100">
                   <label for="leave_tel">Phone Number</label>
-                  <input required id="leave_tel" type="tel" name="PhoneNum" />
+                  <input required id="leave_tel" type="tel" name="phone" />
                 </div>
                 <div class="form-group w-100">
                   <label for="leave_email"> Your Email</label>
-                  <input required id="leave_email" type="email" name="Email" />
+                  <input required id="leave_email" type="email" name="email" />
                 </div>
                 <div class="form-group w-100 popup-submit-btn">
-                  <button id="call_bck_btn" name="sendemail4" type="submit">
+                  <button
+                    id="call_bck_btn"
+                    name="sendemailLeaveMessage"
+                    type="submit"
+                  >
                     Submit
                   </button>
                 </div>
@@ -1006,7 +1010,7 @@
             <span class="position-relative">
               <input
                 type="text"
-                name="quickNum"
+                name="phone"
                 id="telephone3"
                 class="form-control txt-call-phone swing flags mb-3"
                 minlength="8"
@@ -1018,7 +1022,7 @@
             </span>
             <input
               type="submit"
-              name="sendemail3"
+              name="sendemailQuickCall"
               class="btn-main btn-block m-t-15 quick-call-btn"
               id="quick-call-btn"
               value="Request a call back"
@@ -1120,5 +1124,36 @@
       }
     </script>
     <script src="js/lity.min.js"></script>
+    <script type="text/javascript" data-cfasync="false">
+      window.purechatApi = {
+        l: [],
+        t: [],
+        on: function () {
+          this.l.push(arguments);
+        },
+      };
+      (function () {
+        var done = false;
+        var script = document.createElement("script");
+        script.async = true;
+        script.type = "text/javascript";
+        script.src = "https://app.purechat.com/VisitorWidget/WidgetScript";
+        document.getElementsByTagName("HEAD").item(0).appendChild(script);
+        script.onreadystatechange = script.onload = function (e) {
+          if (
+            !done &&
+            (!this.readyState ||
+              this.readyState == "loaded" ||
+              this.readyState == "complete")
+          ) {
+            var w = new PCWidget({
+              c: "86f29916-9d35-4ad5-b29a-acc79b86ede2",
+              f: true,
+            });
+            done = true;
+          }
+        };
+      })();
+    </script>
   </body>
 </html>
